@@ -1,5 +1,13 @@
+import utils = require("mykoop-utils");
 
+class MetaData implements utils.IMetaData {
 
-export function generateRoute(){
+  generateRoute() {
+
+  }
+
 
 }
+
+var metaData: utils.IMetaData = new MetaData();
+export = metaData;

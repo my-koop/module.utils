@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/my-koop/module.utils/issues"
   },
-  "homepage": "https://github.com/my-koop/module.utils"
+  "homepage": "https://github.com/my-koop/module.utils",
+  "typescript": {
+    "definition": "definitions.d.ts"
+  }
 }

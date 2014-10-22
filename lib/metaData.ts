@@ -10,7 +10,6 @@ class MetaData implements utils.MetaData {
 
   addData(path: string[], data: any): void;
   addData(path: string, data: any): void;
-
   addData(path: any, data: any): void {
     if(_.isString(path)) {
       path = [path];

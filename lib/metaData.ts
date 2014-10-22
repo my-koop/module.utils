@@ -16,7 +16,7 @@ class MetaData implements utils.MetaData {
     }
 
     if(!_.isArray(path) || path.length < 1) {
-      console.error("MetaData path must be an array of string of at least 1 element");
+      console.error("MetaData path must be an array of string of at least 1 element or a single string");
       return;
     }
 
@@ -33,17 +33,16 @@ class MetaData implements utils.MetaData {
 
   addRoute(options: utils.RouteMetaData) {
     if(!_.isArray(options.idPath) || options.idPath.length < 1) {
-      console.error("MetaData idPath options must have idPath of type string[] with at least one");
+      console.error("RouteMetaData idPath must be an array of string of at least 1 element");
       return;
     }
 
     var dataId = options.idPath.pop();
-    var path = ["routes"];
-    _.forEach(options.idPath, function(id){
+    var path = options.idPath.reduce(function(path: string[], id){
       path.push(id);
       path.push("children");
-    });
-    path.push(dataId);
+      return path;
+    }, ["routes"]).concat([dataId]);
 
     var data: any = {};
 
@@ -59,7 +58,7 @@ class MetaData implements utils.MetaData {
       }
     }
 
-    if(options.component){
+    if(options.component) {
       data.handler = this.generateHandler(options.component);
     }
 
@@ -77,7 +76,7 @@ class MetaData implements utils.MetaData {
     }
   }
 
-  generateHandler(component: string){
+  generateHandler(component: string) {
     return {
       resolve: "component",
       value: component

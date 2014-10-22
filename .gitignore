@@ -28,3 +28,4 @@ node_modules
 .lock-wscript
 /typings/mykoop/mykoop.d.ts
 /*.sublime-workspace
+/tests/*.js

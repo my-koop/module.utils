@@ -2,16 +2,17 @@
 declare module "mykoop-utils" {
 
   export interface RouteMetaData{
-    parents: string[];
+    idPath: string[];
     path?: string;
     name?: string;
-    component?: string;
-    isDefault?: boolean;
+    component: string;
+    default?: string;
   }
 
-  export interface IMetaData {
+  export class MetaData {
+    addData(path: string[], data: any): void;
+    addData(path: string, data: any): void;
+    get(): any;
+    addRoute(options: RouteMetaData);
   }
-
-  export var metaData: IMetaData;
-
 }

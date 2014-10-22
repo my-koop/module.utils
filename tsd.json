@@ -7,6 +7,9 @@
   "installed": {
     "lodash/lodash.d.ts": {
       "commit": "70c72771ee81502e36ce3138c287944e1be32173"
+    },
+    "node/node.d.ts": {
+      "commit": "70c72771ee81502e36ce3138c287944e1be32173"
     }
   },
   "dependencies": {

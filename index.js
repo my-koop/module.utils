@@ -1,3 +1,3 @@
-/// <reference path="definitions.d.ts" />
-var metaData = require("./lib/metaData");
-exports.metaData = metaData;
+/// <reference path="typings/tsd.d.ts" />
+var MetaData = require("./lib/metaData");
+exports.MetaData = MetaData;

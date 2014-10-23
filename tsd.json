@@ -1,0 +1,18 @@
+{
+  "version": "v4",
+  "repo": "my-koop/type.definitions",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "lodash/lodash.d.ts": {
+      "commit": "70c72771ee81502e36ce3138c287944e1be32173"
+    },
+    "node/node.d.ts": {
+      "commit": "70c72771ee81502e36ce3138c287944e1be32173"
+    }
+  },
+  "dependencies": {
+    "mykoop": {}
+  }
+}

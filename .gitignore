@@ -26,3 +26,6 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+/typings/mykoop/mykoop.d.ts
+/*.sublime-workspace
+/tests/*.js

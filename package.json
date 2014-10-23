@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/my-koop/module.utils",
   "typescript": {
-    "definition": "definitions.d.ts"
+    "definition": "typings/mykoop-utils/mykoop-utils.d.ts"
+  },
+  "dependencies": {
+    "lodash": "^2.4.1"
   }
 }

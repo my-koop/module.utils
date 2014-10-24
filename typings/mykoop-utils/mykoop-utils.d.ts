@@ -1,5 +1,7 @@
 
 declare module "mykoop-utils" {
+  export var __DEV__: boolean;
+  export var __PROD__: boolean;
 
   export interface RouteMetaData {
     // path of the route, mustn't be empty

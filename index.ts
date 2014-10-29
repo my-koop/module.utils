@@ -1,5 +1,7 @@
 /// <reference path="typings/tsd.d.ts" />
 export import MetaData = require("./lib/metaData");
+export import ModuleControllersBinder = require("./lib/ModuleControllersBinder");
+export import BaseModule = require("./lib/BaseModule");
 
 var env = process.env;
 var TEST_ENV = env.TEST_ENV;

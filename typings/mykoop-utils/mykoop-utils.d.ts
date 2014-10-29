@@ -3,6 +3,23 @@ declare module "mykoop-utils" {
   export var __DEV__: boolean;
   export var __PROD__: boolean;
 
+  export class BaseModule implements mykoop.IModule {
+    getModuleManager(): mykoop.ModuleManager;
+    setModuleManager(moduleManager: mykoop.ModuleManager): void;
+  }
+
+  export class ModuleControllersBinder<T extends mykoop.IModule> {
+    constructor(moduleInstance: T);
+    attach(
+      params: mykoop.RouteParams,
+      controller: (
+        req: express.Request,
+        res: express.Response,
+        next?: Function
+      ) => void
+    );
+  }
+
   export interface RouteMetaData {
     // path of the route, mustn't be empty
     // ie: ["admin","inventory","description"]

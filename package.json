@@ -20,6 +20,7 @@
     "definition": "typings/mykoop-utils/mykoop-utils.d.ts"
   },
   "dependencies": {
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "mykoop-logger": "git://github.com/my-koop/module.logger"
   }
 }

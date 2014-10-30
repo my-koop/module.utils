@@ -1,7 +1,7 @@
 import utils = require("mykoop-utils");
 import _ = require("lodash");
 
-class MetaData implements utils.MetaData {
+class MetaDataBuilder implements utils.MetaDataBuilder {
   private metaData: any = {};
 
   get() {
@@ -84,4 +84,4 @@ class MetaData implements utils.MetaData {
   }
 }
 
-export = MetaData;
+export = MetaDataBuilder;

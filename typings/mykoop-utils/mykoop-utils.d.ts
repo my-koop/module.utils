@@ -1,7 +1,12 @@
 
+declare module mklogger {
+  export interface Logger {}
+}
+
 declare module "mykoop-utils" {
   export var __DEV__: boolean;
   export var __PROD__: boolean;
+  export function getLogger(module: any): mklogger.Logger;
 
   export class BaseModule implements mykoop.IModule {
     getModuleManager(): mykoop.ModuleManager;
@@ -35,7 +40,9 @@ declare module "mykoop-utils" {
     default?: string;
   }
 
-  export class MetaData {
+  //DEPRECATED
+  export class MetaData extends MetaDataBuilder {}
+  export class MetaDataBuilder {
     // Retrieves the MetaData object
     get(): any;
     // Adds data to the MetaData, must at least provide the root in path

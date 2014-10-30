@@ -41,8 +41,8 @@ declare module "mykoop-utils" {
   }
 
   //DEPRECATED
-  export interface MetaData extends MetaDataBuilder {}
-  export interface MetaDataBuilder {
+  export class MetaData extends MetaDataBuilder {}
+  export class MetaDataBuilder {
     // Retrieves the MetaData object
     get(): any;
     // Adds data to the MetaData, must at least provide the root in path

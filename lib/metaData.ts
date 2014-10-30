@@ -1,5 +1,7 @@
 import utils = require("mykoop-utils");
 import _ = require("lodash");
+import getLogger = require("mykoop-logger");
+var logger = getLogger(module);
 
 class MetaData implements utils.MetaData {
   private metaData: any = {};
@@ -28,17 +30,24 @@ class MetaData implements utils.MetaData {
       dst = dst[street];
     });
 
-    dst = _.merge(dst,data);
+    dst = _.merge(dst, data);
   }
 
   addRoute(options: utils.RouteMetaData) {
+    logger.warn(
+      "You are using mykoop-utils deprecated method \"addRoute\", please use \"addFrontendRoute\" instead.",
+      {trace: (<any>new Error()).stack}
+    );
+    this.addFrontendRoute(options);
+  }
+  addFrontendRoute(options: utils.RouteMetaData) {
     if(!_.isArray(options.idPath) || options.idPath.length < 1) {
       console.error("RouteMetaData idPath must be an array of string of at least 1 element");
       return;
     }
 
     var dataId = options.idPath.pop();
-    var path = options.idPath.reduce(function(path: string[], id){
+    var path = options.idPath.reduce(function(path: string[], id) {
       path.push(id);
       path.push("children");
       return path;

@@ -3,7 +3,7 @@ import _ = require("lodash");
 import getLogger = require("mykoop-logger");
 var logger = getLogger(module);
 
-class MetaData implements utils.MetaData {
+class MetaDataBuilder implements utils.MetaDataBuilder {
   private metaData: any = {};
 
   get() {
@@ -93,4 +93,4 @@ class MetaData implements utils.MetaData {
   }
 }
 
-export = MetaData;
+export = MetaDataBuilder;

@@ -35,6 +35,8 @@ declare module "mykoop-utils" {
     // Name of the route for <Link to="...">, set to null to use last idPath element
     name?: string;
     // Component you want to use for this route, the module must own the component
+    // Wrapper component default is set
+    // Wrapper components have {this.props.activeRouteHandler()}
     component: string;
     // same as component but used when this route has wrapper component
     default?: string;
@@ -49,6 +51,8 @@ declare module "mykoop-utils" {
     addData(path: string[], data: any): void;
     addData(path: string, data: any): void;
     // Adds a frontend route to the MetaData, refer to RouteMetaData for options
+    addFrontendRoute(options: RouteMetaData);
+    // Deprecated
     addRoute(options: RouteMetaData);
   }
 }

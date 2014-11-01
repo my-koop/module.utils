@@ -9,7 +9,6 @@ class MyKoopError extends verror.WError {
   static DatabaseError = DatabaseError;
   static ApplicationError = ApplicationError;
   static ValidationError = ValidationError;
-  static ErrorInterfaces = ErrorInterfaces;
 
   constructor(err: Error, msg: string, ...args: any[]) {
     super(err, msg, args);

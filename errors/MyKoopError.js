@@ -9,7 +9,6 @@ var ErrorCodes = require("./ErrorCodes");
 var DatabaseError = require("./DatabaseError");
 var ApplicationError = require("./ApplicationError");
 var ValidationError = require("./ValidationError");
-var ErrorInterfaces = require("./ErrorInterfaces");
 
 var MyKoopError = (function (_super) {
     __extends(MyKoopError, _super);
@@ -28,7 +27,6 @@ var MyKoopError = (function (_super) {
     MyKoopError.DatabaseError = DatabaseError;
     MyKoopError.ApplicationError = ApplicationError;
     MyKoopError.ValidationError = ValidationError;
-    MyKoopError.ErrorInterfaces = ErrorInterfaces;
     return MyKoopError;
 })(verror.WError);
 

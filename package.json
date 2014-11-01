@@ -23,6 +23,7 @@
   "dependencies": {
     "lodash": "^2.4.1",
     "mykoop-logger": "git://github.com/my-koop/module.logger",
-    "validate.js": "^0.3.2"
+    "validate.js": "^0.3.2",
+    "verror": "^1.4.0"
   }
 }

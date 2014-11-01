@@ -31,4 +31,5 @@ export import common = require("./common/index");
 // this imports the file to trigger typescript compilation
 // but doesn't generate any code
 import t1 = require("./tests/metaDataTests");
+import t2 = require("./tests/errorsTests");
 

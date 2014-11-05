@@ -5,7 +5,6 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var verror = require("verror");
-var ErrorCodes = require("./ErrorCodes");
 var DatabaseError = require("./DatabaseError");
 var ApplicationError = require("./ApplicationError");
 var ValidationError = require("./ValidationError");
@@ -21,7 +20,7 @@ var MyKoopError = (function (_super) {
     }
     MyKoopError.prototype.serialize = function () {
         return {
-            code: 0 /* Unknown */
+            context: "unknown"
         };
     };
     MyKoopError.DatabaseError = DatabaseError;

@@ -2,7 +2,7 @@ import MyKoopError = require("./MyKoopError");
 import ErrorCodes = require("./ErrorCodes");
 import ErrorInterfaces = require("./ErrorInterfaces");
 
-class AplicationError extends MyKoopError {
+class ApplicationError extends MyKoopError {
   constructor(public errData: any, err: Error, msg: string, ...args: any[]) {
     super(err, msg, args);
   }
@@ -15,4 +15,4 @@ class AplicationError extends MyKoopError {
   }
 }
 
-export = AplicationError;
+export = ApplicationError;

@@ -7,9 +7,9 @@ var __extends = this.__extends || function (d, b) {
 var MyKoopError = require("./MyKoopError");
 var ErrorCodes = require("./ErrorCodes");
 
-var AplicationError = (function (_super) {
-    __extends(AplicationError, _super);
-    function AplicationError(errData, err, msg) {
+var ApplicationError = (function (_super) {
+    __extends(ApplicationError, _super);
+    function ApplicationError(errData, err, msg) {
         var args = [];
         for (var _i = 0; _i < (arguments.length - 3); _i++) {
             args[_i] = arguments[_i + 3];
@@ -17,13 +17,13 @@ var AplicationError = (function (_super) {
         _super.call(this, err, msg, args);
         this.errData = errData;
     }
-    AplicationError.prototype.serialize = function () {
+    ApplicationError.prototype.serialize = function () {
         return {
             code: 2 /* Application */,
             app: this.errData
         };
     };
-    return AplicationError;
+    return ApplicationError;
 })(MyKoopError);
 
-module.exports = AplicationError;
+module.exports = ApplicationError;

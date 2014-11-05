@@ -1,10 +1,13 @@
-import ErrorCodes = require("./ErrorCodes");
-export interface ValidationErrorData {
-    [id: string]: string[];
-}
-export interface SerializeResult {
-    code: ErrorCodes;
-    validation?: ValidationErrorData;
-    app?: any;
-    [id: string]: any;
+/// <reference path="./ErrorCodes.d.ts" />
+
+declare module ErrorInterfaces {
+  export interface ValidationErrorData {
+      [id: string]: string[];
+  }
+  export interface SerializeResult {
+      code: ErrorCodes.codes;
+      validation?: ValidationErrorData;
+      app?: any;
+      [id: string]: any;
+  }
 }

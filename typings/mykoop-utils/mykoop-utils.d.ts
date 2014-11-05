@@ -9,6 +9,7 @@ declare module "mykoop-utils" {
   export var __DEV__: boolean;
   export var __PROD__: boolean;
   export function getLogger(module: any): mklogger.Logger;
+  export var errors: MyKoopError;
 
   export class BaseModule implements mykoop.IModule {
     getModuleManager(): mykoop.ModuleManager;

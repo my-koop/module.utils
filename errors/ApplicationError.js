@@ -9,7 +9,7 @@ var ErrorCodes = require("./ErrorCodes");
 
 var ApplicationError = (function (_super) {
     __extends(ApplicationError, _super);
-    function ApplicationError(errData, err, msg) {
+    function ApplicationError(err, errData, msg) {
         var args = [];
         for (var _i = 0; _i < (arguments.length - 3); _i++) {
             args[_i] = arguments[_i + 3];

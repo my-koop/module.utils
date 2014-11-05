@@ -9,7 +9,7 @@ var ErrorCodes = require("./ErrorCodes");
 
 var ValidationError = (function (_super) {
     __extends(ValidationError, _super);
-    function ValidationError(validationErrorData, err, msg) {
+    function ValidationError(err, validationErrorData, msg) {
         var args = [];
         for (var _i = 0; _i < (arguments.length - 3); _i++) {
             args[_i] = arguments[_i + 3];

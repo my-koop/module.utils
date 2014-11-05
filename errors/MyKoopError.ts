@@ -16,7 +16,7 @@ class MyKoopError extends verror.WError {
 
   serialize(): ErrorInterfaces.SerializeResult {
     return {
-      code: ErrorCodes.Unknown
+      code: ErrorCodes.codes.Unknown
     };
   }
 }

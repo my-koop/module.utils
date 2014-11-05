@@ -1,7 +1,9 @@
-enum ErrorCodes {
-  Unknown,
-  Database,
-  Application,
-  Validation
+module ErrorCodes {
+  export enum codes {
+    Unknown,
+    Database,
+    Application,
+    Validation
+  }
 }
 export = ErrorCodes;

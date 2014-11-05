@@ -5,7 +5,7 @@ export interface ValidationErrorData {
 }
 
 export interface SerializeResult {
-  code: ErrorCodes;
+  code: ErrorCodes.codes;
   validation?: ValidationErrorData;
   app?: any;
   [id: string]: any;

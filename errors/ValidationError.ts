@@ -14,7 +14,7 @@ class ValidationError extends MyKoopError {
 
   serialize(): ErrorInterfaces.SerializeResult {
     return {
-      code: ErrorCodes.Validation,
+      code: ErrorCodes.codes.Validation,
       validation: this.validationErrorData
     };
   }

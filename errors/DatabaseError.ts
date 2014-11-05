@@ -9,7 +9,7 @@ class DatabaseError extends MyKoopError {
 
   serialize(): ErrorInterfaces.SerializeResult {
     return {
-      code: ErrorCodes.Database
+      code: ErrorCodes.codes.Database
     };
   }
 }

@@ -9,7 +9,7 @@ class ApplicationError extends MyKoopError {
 
   serialize(): ErrorInterfaces.SerializeResult {
     return {
-      code: ErrorCodes.Application,
+      code: ErrorCodes.codes.Application,
       app: this.errData
     };
   }

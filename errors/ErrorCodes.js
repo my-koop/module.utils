@@ -1,8 +1,11 @@
 var ErrorCodes;
 (function (ErrorCodes) {
-    ErrorCodes[ErrorCodes["Unknown"] = 0] = "Unknown";
-    ErrorCodes[ErrorCodes["Database"] = 1] = "Database";
-    ErrorCodes[ErrorCodes["Application"] = 2] = "Application";
-    ErrorCodes[ErrorCodes["Validation"] = 3] = "Validation";
+    (function (codes) {
+        codes[codes["Unknown"] = 0] = "Unknown";
+        codes[codes["Database"] = 1] = "Database";
+        codes[codes["Application"] = 2] = "Application";
+        codes[codes["Validation"] = 3] = "Validation";
+    })(ErrorCodes.codes || (ErrorCodes.codes = {}));
+    var codes = ErrorCodes.codes;
 })(ErrorCodes || (ErrorCodes = {}));
 module.exports = ErrorCodes;

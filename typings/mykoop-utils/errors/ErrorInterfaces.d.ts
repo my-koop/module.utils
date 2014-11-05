@@ -5,7 +5,7 @@ declare module ErrorInterfaces {
       [id: string]: string[];
   }
   export interface SerializeResult {
-      code: ErrorCodes.codes;
+      context: string;
       validation?: ValidationErrorData;
       app?: any;
       [id: string]: any;

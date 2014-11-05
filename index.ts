@@ -12,17 +12,6 @@ export import getLogger = require("mykoop-logger");
 var logger = getLogger(module);
 
 export import MetaDataBuilder = require("./lib/MetaDataBuilder");
-export class MetaData extends MetaDataBuilder {
-  constructor() {
-    logger.warn(
-      "MetaData is deprecated, use MetaDataBuilder instead",
-      {
-        stack:new Error().stack
-      }
-    );
-    super();
-  }
-};
 export import ModuleControllersBinder = require("./lib/ModuleControllersBinder");
 export import BaseModule = require("./lib/BaseModule");
 export import common = require("./common/index");

@@ -1,16 +1,16 @@
 var util = require("util");
 import utils = require("../index");
 
-var metaData: utils.MetaData = new utils.MetaData();
+var metaData: utils.MetaDataBuilder = new utils.MetaDataBuilder();
 
-metaData.addRoute({
+metaData.addFrontendRoute({
   idPath: ["admin","inventory","description"],
   path: "desc",
   name: "Description",
   component: "DescPage"
 });
 
-metaData.addRoute({
+metaData.addFrontendRoute({
   idPath: ["admin","inventory"],
   path: "/inventory",
   component: "InventoryWrapper",

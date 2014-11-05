@@ -33,13 +33,6 @@ class MetaDataBuilder implements utils.MetaDataBuilder {
     dst = _.merge(dst, data);
   }
 
-  addRoute(options: utils.RouteMetaData) {
-    logger.warn(
-      "You are using mykoop-utils deprecated method \"addRoute\", please use \"addFrontendRoute\" instead.",
-      {trace: (<any>new Error()).stack}
-    );
-    this.addFrontendRoute(options);
-  }
   addFrontendRoute(options: utils.RouteMetaData) {
     if(!_.isArray(options.idPath) || options.idPath.length < 1) {
       console.error("RouteMetaData idPath must be an array of string of at least 1 element");

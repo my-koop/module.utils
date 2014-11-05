@@ -42,8 +42,6 @@ declare module "mykoop-utils" {
     default?: string;
   }
 
-  //DEPRECATED
-  export class MetaData extends MetaDataBuilder {}
   export class MetaDataBuilder {
     // Retrieves the MetaData object
     get(): any;
@@ -52,7 +50,5 @@ declare module "mykoop-utils" {
     addData(path: string, data: any): void;
     // Adds a frontend route to the MetaData, refer to RouteMetaData for options
     addFrontendRoute(options: RouteMetaData);
-    // Deprecated
-    addRoute(options: RouteMetaData);
   }
 }

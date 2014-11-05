@@ -19,3 +19,6 @@ var ModuleControllersBinder = require("./lib/ModuleControllersBinder");
 exports.ModuleControllersBinder = ModuleControllersBinder;
 var BaseModule = require("./lib/BaseModule");
 exports.BaseModule = BaseModule;
+
+var errors = require("./errors/index");
+exports.errors = errors;

@@ -15,9 +15,11 @@ export import MetaDataBuilder = require("./lib/MetaDataBuilder");
 export import ModuleControllersBinder = require("./lib/ModuleControllersBinder");
 export import BaseModule = require("./lib/BaseModule");
 export import common = require("./common/index");
+export import errors = require("./errors/index");
 
 // FIXME:: Test cases, pending real test infrastructure
 // this imports the file to trigger typescript compilation
 // but doesn't generate any code
 import t1 = require("./tests/metaDataTests");
+import t2 = require("./tests/errorsTests");
 

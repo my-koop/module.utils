@@ -1,5 +1,4 @@
 import MyKoopError = require("./MyKoopError");
-import ErrorCodes = require("./ErrorCodes");
 import ErrorInterfaces = require("./ErrorInterfaces");
 
 class DatabaseError extends MyKoopError {
@@ -9,7 +8,7 @@ class DatabaseError extends MyKoopError {
 
   serialize(): ErrorInterfaces.SerializeResult {
     return {
-      code: ErrorCodes.codes.Database
+      context: "database"
     };
   }
 }

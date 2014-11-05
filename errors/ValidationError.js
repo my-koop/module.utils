@@ -5,7 +5,6 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var MyKoopError = require("./MyKoopError");
-var ErrorCodes = require("./ErrorCodes");
 
 var ValidationError = (function (_super) {
     __extends(ValidationError, _super);
@@ -19,7 +18,7 @@ var ValidationError = (function (_super) {
     }
     ValidationError.prototype.serialize = function () {
         return {
-            code: 3 /* Validation */,
+            context: "validation",
             validation: this.validationErrorData
         };
     };

@@ -1,5 +1,4 @@
 import MyKoopError = require("./MyKoopError");
-import ErrorCodes = require("./ErrorCodes");
 import ErrorInterfaces = require("./ErrorInterfaces");
 
 class ValidationError extends MyKoopError {
@@ -14,7 +13,7 @@ class ValidationError extends MyKoopError {
 
   serialize(): ErrorInterfaces.SerializeResult {
     return {
-      code: ErrorCodes.codes.Validation,
+      context: "validation",
       validation: this.validationErrorData
     };
   }

@@ -5,7 +5,6 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var MyKoopError = require("./MyKoopError");
-var ErrorCodes = require("./ErrorCodes");
 
 var DatabaseError = (function (_super) {
     __extends(DatabaseError, _super);
@@ -18,7 +17,7 @@ var DatabaseError = (function (_super) {
     }
     DatabaseError.prototype.serialize = function () {
         return {
-            code: 1 /* Database */
+            context: "database"
         };
     };
     return DatabaseError;

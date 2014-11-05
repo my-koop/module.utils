@@ -1,5 +1,4 @@
 import verror = require("verror");
-import ErrorCodes = require("./ErrorCodes");
 import DatabaseError = require("./DatabaseError");
 import ApplicationError = require("./ApplicationError");
 import ValidationError = require("./ValidationError");
@@ -16,7 +15,7 @@ class MyKoopError extends verror.WError {
 
   serialize(): ErrorInterfaces.SerializeResult {
     return {
-      code: ErrorCodes.codes.Unknown
+      context: "unknown"
     };
   }
 }

@@ -5,7 +5,6 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var MyKoopError = require("./MyKoopError");
-var ErrorCodes = require("./ErrorCodes");
 
 var ApplicationError = (function (_super) {
     __extends(ApplicationError, _super);
@@ -19,7 +18,7 @@ var ApplicationError = (function (_super) {
     }
     ApplicationError.prototype.serialize = function () {
         return {
-            code: 2 /* Application */,
+            context: "application",
             app: this.errData
         };
     };

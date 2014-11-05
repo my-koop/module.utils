@@ -3,7 +3,11 @@ import ErrorCodes = require("./ErrorCodes");
 import ErrorInterfaces = require("./ErrorInterfaces");
 
 class ApplicationError extends MyKoopError {
-  constructor(public errData: any, err: Error, msg: string, ...args: any[]) {
+  constructor(
+    err: Error,
+    public errData: any,
+    msg: string, ...args: any[]
+  ) {
     super(err, msg, args);
   }
 

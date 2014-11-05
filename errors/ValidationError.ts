@@ -4,8 +4,8 @@ import ErrorInterfaces = require("./ErrorInterfaces");
 
 class ValidationError extends MyKoopError {
   constructor(
-    public validationErrorData: ErrorInterfaces.ValidationErrorData,
     err: Error,
+    public validationErrorData: ErrorInterfaces.ValidationErrorData,
     msg: string,
     ...args: any[]
   ) {

@@ -9,6 +9,7 @@ var MyKoopError = require("./MyKoopError");
 var DatabaseError = (function (_super) {
     __extends(DatabaseError, _super);
     function DatabaseError(err, msg) {
+        if (typeof msg === "undefined") { msg = "Database Error"; }
         var args = [];
         for (var _i = 0; _i < (arguments.length - 2); _i++) {
             args[_i] = arguments[_i + 2];

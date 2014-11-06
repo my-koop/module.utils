@@ -6,7 +6,11 @@ class MyKoopError extends verror.WError {
   static ApplicationError: any;
   static ValidationError: any;
 
-  constructor(err: Error, msg: string, ...args: any[]) {
+  constructor(
+    err: Error,
+    msg: string = "My Koop Error",
+    ...args: any[]
+  ) {
     super(err, msg, args);
   }
 

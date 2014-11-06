@@ -8,6 +8,6 @@ declare class MyKoopError extends VErrorTypes.VError {
     public static DatabaseError: typeof DatabaseError;
     public static ApplicationError: typeof ApplicationError;
     public static ValidationError: typeof ValidationError;
-    constructor(err: Error, msg: string, ...args: any[]);
+    constructor(err: Error, msg?: string, ...args: any[]);
     public serialize(): ErrorInterfaces.SerializeResult;
 }

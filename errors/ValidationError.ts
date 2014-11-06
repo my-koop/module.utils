@@ -5,7 +5,7 @@ class ValidationError extends MyKoopError {
   constructor(
     err: Error,
     public validationErrorData: ErrorInterfaces.ValidationErrorData,
-    msg: string,
+    msg: string = "Validation Error",
     ...args: any[]
   ) {
     super(err, msg, args);

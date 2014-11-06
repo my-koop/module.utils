@@ -3,7 +3,8 @@ declare class ValidationError extends MyKoopError {
     constructor(
       err: Error,
       validationErrorData: ErrorInterfaces.ValidationErrorData,
-      msg: string, ...args: any[]
+      msg?: string,
+      ...args: any[]
     );
     public serialize(): ErrorInterfaces.SerializeResult;
 }

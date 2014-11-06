@@ -9,6 +9,7 @@ var verror = require("verror");
 var MyKoopError = (function (_super) {
     __extends(MyKoopError, _super);
     function MyKoopError(err, msg) {
+        if (typeof msg === "undefined") { msg = "My Koop Error"; }
         var args = [];
         for (var _i = 0; _i < (arguments.length - 2); _i++) {
             args[_i] = arguments[_i + 2];

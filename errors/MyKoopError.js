@@ -5,9 +5,6 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var verror = require("verror");
-var DatabaseError = require("./DatabaseError");
-var ApplicationError = require("./ApplicationError");
-var ValidationError = require("./ValidationError");
 
 var MyKoopError = (function (_super) {
     __extends(MyKoopError, _super);
@@ -23,9 +20,6 @@ var MyKoopError = (function (_super) {
             context: "unknown"
         };
     };
-    MyKoopError.DatabaseError = DatabaseError;
-    MyKoopError.ApplicationError = ApplicationError;
-    MyKoopError.ValidationError = ValidationError;
     return MyKoopError;
 })(verror.WError);
 

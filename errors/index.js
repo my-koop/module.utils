@@ -1,3 +1,9 @@
 /// <reference path="../typings/tsd.d.ts" />
 var MyKoopError = require("./MyKoopError");
+var DatabaseError = require("./DatabaseError");
+var ApplicationError = require("./ApplicationError");
+var ValidationError = require("./ValidationError");
+MyKoopError.DatabaseError = DatabaseError;
+MyKoopError.ApplicationError = ApplicationError;
+MyKoopError.ValidationError = ValidationError;
 module.exports = MyKoopError;

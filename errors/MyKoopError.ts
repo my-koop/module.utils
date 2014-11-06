@@ -1,13 +1,10 @@
 import verror = require("verror");
-import DatabaseError = require("./DatabaseError");
-import ApplicationError = require("./ApplicationError");
-import ValidationError = require("./ValidationError");
 import ErrorInterfaces = require("./ErrorInterfaces");
 
 class MyKoopError extends verror.WError {
-  static DatabaseError = DatabaseError;
-  static ApplicationError = ApplicationError;
-  static ValidationError = ValidationError;
+  static DatabaseError: any;
+  static ApplicationError: any;
+  static ValidationError: any;
 
   constructor(err: Error, msg: string, ...args: any[]) {
     super(err, msg, args);

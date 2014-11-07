@@ -9,6 +9,8 @@ var MyKoopError = require("./MyKoopError");
 var ApplicationError = (function (_super) {
     __extends(ApplicationError, _super);
     function ApplicationError(err, errData, msg) {
+        if (typeof errData === "undefined") { errData = {}; }
+        if (typeof msg === "undefined") { msg = "Application Error"; }
         var args = [];
         for (var _i = 0; _i < (arguments.length - 3); _i++) {
             args[_i] = arguments[_i + 3];

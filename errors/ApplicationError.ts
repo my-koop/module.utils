@@ -4,8 +4,9 @@ import ErrorInterfaces = require("./ErrorInterfaces");
 class ApplicationError extends MyKoopError {
   constructor(
     err: Error,
-    public errData: any,
-    msg: string, ...args: any[]
+    public errData: any = {},
+    msg: string = "Application Error",
+    ...args: any[]
   ) {
     super(err, msg, args);
   }

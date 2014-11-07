@@ -11,8 +11,8 @@ class ModuleControllersBinder<T extends mykoop.IModule> {
   attach(
     params: mykoop.RouteParams,
     controller: (
-      req: express.Request,
-      res: express.Response,
+      req: Express.Request,
+      res: Express.Response,
       next?: Function
     ) => void
   ) {

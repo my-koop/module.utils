@@ -4,6 +4,16 @@ declare module mklogger {
   export interface Logger {}
 }
 
+declare module "mykoop-utils/common" {
+  export function validate(obj: any, constraint, options?: any);
+  module validate {
+    export function addValidator(
+      validatorName: string,
+      validationFunction: (value, options?: any, key?: string, attributes?: any) => string
+    );
+  }
+}
+
 declare module "mykoop-utils" {
 
   export var __DEV__: boolean;

@@ -1,3 +1,5 @@
+import _ = require("lodash");
+
 class ModuleControllersBinder<T extends mykoop.IModule> {
   private moduleInstance: T;
   private routerModule: mykoop.Router;
@@ -25,7 +27,7 @@ class ModuleControllersBinder<T extends mykoop.IModule> {
       parseFunc: (req: Express.Request) => any
     }
   ) {
-    if(typeof options == "function") {
+    if(_.isFunction(options)) {
       options = {
         parseFunc: <any>options
       };

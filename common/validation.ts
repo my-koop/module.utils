@@ -2,11 +2,11 @@
 var validateJs = require("validate.js");
 
 
-function validate(obj: any, constraint, options?: any ) {
+function validation(obj: any, constraint, options?: any ) {
   return validateJs(obj, constraint, options)
 }
 
-module validate {
+module validation {
   export function addValidator(
     validatorName: string,
     validationFunction: (value, options?: any, key?: string, attributes?: any) => string
@@ -19,4 +19,4 @@ module validate {
   }
 }
 
-export = validate;
+export = validation;

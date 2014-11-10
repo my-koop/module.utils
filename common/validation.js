@@ -1,12 +1,12 @@
 // http://validatejs.org/ for documentation
 var validateJs = require("validate.js");
 
-function validate(obj, constraint, options) {
+function validation(obj, constraint, options) {
     return validateJs(obj, constraint, options);
 }
 
-var validate;
-(function (validate) {
+var validation;
+(function (validation) {
     function addValidator(validatorName, validationFunction) {
         if (validateJs.validators[validatorName]) {
             console.warn("Custom validator [%s] is already defined", validatorName);
@@ -14,7 +14,7 @@ var validate;
         }
         validateJs.validators[validatorName] = validationFunction;
     }
-    validate.addValidator = addValidator;
-})(validate || (validate = {}));
+    validation.addValidator = addValidator;
+})(validation || (validation = {}));
 
-module.exports = validate;
+module.exports = validation;

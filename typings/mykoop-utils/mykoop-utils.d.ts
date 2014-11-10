@@ -5,8 +5,8 @@ declare module mklogger {
 }
 
 declare module "mykoop-utils/common" {
-  export function validate(obj: any, constraint, options?: any);
-  module validate {
+  export function validation(obj: any, constraint, options?: any);
+  module validation {
     export function addValidator(
       validatorName: string,
       validationFunction: (value, options?: any, key?: string, attributes?: any) => string

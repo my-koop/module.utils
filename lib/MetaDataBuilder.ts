@@ -49,7 +49,7 @@ class MetaDataBuilder implements utils.MetaDataBuilder {
 
     if(options.name !== undefined) {
       if(options.name === null) {
-        data.name = options.idPath[options.idPath.length - 1];
+        data.name = _.last(options.idPath);
       } else {
         data.name = options.name;
       }

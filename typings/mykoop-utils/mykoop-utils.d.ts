@@ -36,6 +36,10 @@ declare module "mykoop-utils" {
         next?: Function
       ) => void
     );
+    makeSimpleController(
+      method: string,
+      parseFunc: (req: Express.Request) => any
+    ): (req: Express.Request, res: Express.Response) => void;
   }
 
   export interface RouteMetaData {

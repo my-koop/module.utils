@@ -5,6 +5,7 @@ class MyKoopError extends verror.WError {
   static DatabaseError: any;
   static ApplicationError: any;
   static ValidationError: any;
+  statusCode: number;
 
   constructor(
     err: Error,
@@ -12,6 +13,7 @@ class MyKoopError extends verror.WError {
     ...args: any[]
   ) {
     super(err, msg, args);
+    this.statusCode = 500;
   }
 
   serialize(): ErrorInterfaces.SerializeResult {

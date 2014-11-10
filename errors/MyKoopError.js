@@ -15,6 +15,7 @@ var MyKoopError = (function (_super) {
             args[_i] = arguments[_i + 2];
         }
         _super.call(this, err, msg, args);
+        this.statusCode = 500;
     }
     MyKoopError.prototype.serialize = function () {
         return {

@@ -16,6 +16,7 @@ var ValidationError = (function (_super) {
         }
         _super.call(this, err, msg, args);
         this.validationErrorData = validationErrorData;
+        this.statusCode = 400;
     }
     ValidationError.prototype.serialize = function () {
         return {

@@ -17,6 +17,7 @@ var ApplicationError = (function (_super) {
         }
         _super.call(this, err, msg, args);
         this.errData = errData;
+        this.statusCode = 400;
     }
     ApplicationError.prototype.serialize = function () {
         return {

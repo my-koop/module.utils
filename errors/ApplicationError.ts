@@ -9,6 +9,7 @@ class ApplicationError extends MyKoopError {
     ...args: any[]
   ) {
     super(err, msg, args);
+    this.statusCode = 400;
   }
 
   serialize(): ErrorInterfaces.SerializeResult {

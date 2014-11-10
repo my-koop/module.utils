@@ -18,6 +18,22 @@ class ModuleControllersBinder<T extends mykoop.IModule> {
   ) {
     this.routerModule.addRoute(params, controller.bind(this.moduleInstance));
   }
+
+  makeSimpleController(
+    method: string,
+    parseFunc: (req: Express.Request) => any
+  ) {
+    var moduleMethod = this.moduleInstance[method];
+    return function(req, res) {
+      var params = parseFunc(req);
+      moduleMethod(params, function(err, response) {
+        if(err) {
+          res.error(err);
+        }
+        res.send(response);
+      });
+    }
+  }
 }
 
 export = ModuleControllersBinder;

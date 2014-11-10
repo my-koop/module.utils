@@ -38,7 +38,13 @@ declare module "mykoop-utils" {
     );
     makeSimpleController(
       method: string,
-      parseFunc: (req: Express.Request) => any
+      parseFunc?: (req: Express.Request) => any
+    ): (req: Express.Request, res: Express.Response) => void;
+    makeSimpleController(
+      method: string,
+      options?: {
+        parseFunc?: (req: Express.Request) => any
+      }
     ): (req: Express.Request, res: Express.Response) => void;
   }
 

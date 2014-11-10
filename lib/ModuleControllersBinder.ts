@@ -21,8 +21,17 @@ class ModuleControllersBinder<T extends mykoop.IModule> {
 
   makeSimpleController(
     method: string,
-    parseFunc: (req: Express.Request) => any
+    options?: {
+      parseFunc: (req: Express.Request) => any
+    }
   ) {
+    if(typeof options == "function") {
+      options = {
+        parseFunc: <any>options
+      };
+    }
+    var parseFunc = options && options.parseFunc || function() { return {}; };
+
     return function(req, res) {
       var params = parseFunc(req);
       this[method](params, function(err, response) {

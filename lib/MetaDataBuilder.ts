@@ -2,6 +2,7 @@ import utils = require("mykoop-utils");
 import _ = require("lodash");
 import getLogger = require("mykoop-logger");
 var logger = getLogger(module);
+import makeFrontendPathRoute = require("../common/makeFrontendPathRoute");
 
 class MetaDataBuilder implements utils.MetaDataBuilder {
   private metaData: any = {};
@@ -39,13 +40,7 @@ class MetaDataBuilder implements utils.MetaDataBuilder {
       return;
     }
 
-    var dataId = options.idPath.pop();
-    var path = options.idPath.reduce(function(path: string[], id) {
-      path.push(id);
-      path.push("children");
-      return path;
-    }, ["routes"]).concat([dataId]);
-
+    var path = makeFrontendPathRoute(options.idPath);
     var data: any = {};
 
     if(options.path) {
@@ -54,7 +49,7 @@ class MetaDataBuilder implements utils.MetaDataBuilder {
 
     if(options.name !== undefined) {
       if(options.name === null) {
-        data.name = dataId;
+        data.name = options.idPath[options.idPath.length - 1];
       } else {
         data.name = options.name;
       }

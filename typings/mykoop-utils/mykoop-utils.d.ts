@@ -44,6 +44,7 @@ declare module "mykoop-utils" {
       method: string,
       options?: {
         parseFunc?: (req: Express.Request) => any
+        processResponse?: (response: any) => any;
       }
     ): (req: Express.Request, res: Express.Response) => void;
   }

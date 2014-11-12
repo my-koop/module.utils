@@ -24,7 +24,8 @@ class ModuleControllersBinder<T extends mykoop.IModule> {
   makeSimpleController(
     method: string,
     options?: {
-      parseFunc: (req: Express.Request) => any
+      parseFunc?: (req: Express.Request) => any;
+      processResponse?: (response: any) => any;
     }
   ) {
     if(_.isFunction(options)) {
@@ -32,15 +33,19 @@ class ModuleControllersBinder<T extends mykoop.IModule> {
         parseFunc: <any>options
       };
     }
-    var parseFunc = options && options.parseFunc || function() { return {}; };
+    if(!options) {
+      options = {};
+    }
+    var parseFunc = options.parseFunc || function() { return {}; };
+    var processResponse = options.processResponse || _.identity;
 
     return function(req, res) {
       var params = parseFunc(req);
       this[method](params, function(err, response) {
         if(err) {
-          res.error(err);
+          return res.error(err);
         }
-        res.send(response);
+        res.send(processResponse(response));
       });
     }
   }

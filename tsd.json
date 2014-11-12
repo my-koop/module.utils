@@ -10,6 +10,9 @@
     },
     "node/node.d.ts": {
       "commit": "70c72771ee81502e36ce3138c287944e1be32173"
+    },
+    "express/express.d.ts": {
+      "commit": "19f97ddf7a0e81bffcf4e4482bb2a3ea6f2bf5b7"
     }
   },
   "dependencies": {

@@ -30,11 +30,11 @@ declare module "mykoop-utils" {
     constructor(moduleInstance: T);
     attach(
       params: mykoop.RouteParams,
-      controller: (
-        req: Express.Request,
-        res: Express.Response,
-        next?: Function
-      ) => void
+      controller: Express.Handler
+    );
+    attach(
+      params: mykoop.RouteParams,
+      controller: Express.Handler[]
     );
     makeSimpleController(
       method: string,

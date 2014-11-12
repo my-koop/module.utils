@@ -1,4 +1,5 @@
 import _ = require("lodash");
+import Express = require("express");
 
 class ModuleControllersBinder<T extends mykoop.IModule> {
   private moduleInstance: T;
@@ -12,13 +13,16 @@ class ModuleControllersBinder<T extends mykoop.IModule> {
 
   attach(
     params: mykoop.RouteParams,
-    controller: (
-      req: Express.Request,
-      res: Express.Response,
-      next?: Function
-    ) => void
+    controllers: Express.Handler[]
   ) {
-    this.routerModule.addRoute(params, controller.bind(this.moduleInstance));
+    if(_.isFunction(controllers)) {
+      controllers = [<any>controllers];
+    }
+    var self = this;
+    controllers = _.map(controllers, function(controller) {
+      return _.bind(controller, self.moduleInstance);
+    });
+    this.routerModule.addRoute(params, controllers);
   }
 
   makeSimpleController(

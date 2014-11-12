@@ -4,3 +4,4 @@
 /// <reference path="lodash/lodash.d.ts" />
 /// <reference path="node/node.d.ts" />
 /// <reference path="../node_modules/mykoop-logger/typings/mykoop-logger/mykoop-logger.d.ts" />
+/// <reference path="express/express.d.ts" />

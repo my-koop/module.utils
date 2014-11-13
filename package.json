@@ -1,7 +1,7 @@
 {
   "name": "mykoop-utils",
   "role": "utils",
-  "version": "1.0.0-beta",
+  "version": "1.0.0-rc",
   "description": "module.utils\r ============",
   "main": "index.js",
   "scripts": {

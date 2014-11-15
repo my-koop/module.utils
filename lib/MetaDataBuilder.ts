@@ -41,18 +41,10 @@ class MetaDataBuilder implements utils.MetaDataBuilder {
     }
 
     var path = makeFrontendPathRoute(options.idPath);
-    var data: any = {};
+    var data: any = _.omit(options, "idPath", "children", "default", "component");
 
-    if(options.path) {
-      data.path = options.path;
-    }
-
-    if(options.name !== undefined) {
-      if(options.name === null) {
-        data.name = _.last(options.idPath);
-      } else {
-        data.name = options.name;
-      }
+    if(data.name === null) {
+      data.name = _.last(options.idPath);
     }
 
     if(options.component) {

@@ -10,7 +10,7 @@ class BaseModule implements mykoop.IModule {
     this.moduleManager = moduleManager;
   }
 
-  private callWithConnection(
+  callWithConnection(
     method: (connection, params, callback) => void,
     params: any,
     callback: (err, result?) => void

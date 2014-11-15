@@ -24,6 +24,16 @@ declare module "mykoop-utils" {
   export class BaseModule implements mykoop.IModule {
     getModuleManager(): mykoop.ModuleManager;
     setModuleManager(moduleManager: mykoop.ModuleManager): void;
+    callWithConnection(
+      method: string,
+      params: any,
+      callback: (err, result?) => void
+    );
+    callWithConnection(
+      method: (connection, params, callback) => void,
+      params: any,
+      callback: (err, result?) => void
+    );
   }
 
   export class ModuleControllersBinder<T extends mykoop.IModule> {

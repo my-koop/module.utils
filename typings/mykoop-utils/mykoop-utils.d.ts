@@ -71,7 +71,7 @@ declare module "mykoop-utils" {
     // Component you want to use for this route, the module must own the component
     // Wrapper component default is set
     // Wrapper components have {this.props.activeRouteHandler()}
-    component: string;
+    component?: string;
     // same as component but used when this route has wrapper component
     default?: string;
   }

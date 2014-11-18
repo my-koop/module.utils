@@ -5,14 +5,13 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var MyKoopError = require("./MyKoopError");
-
 var ValidationError = (function (_super) {
     __extends(ValidationError, _super);
     function ValidationError(err, validationErrorData, msg) {
-        if (typeof msg === "undefined") { msg = "Validation Error"; }
+        if (msg === void 0) { msg = "Validation Error"; }
         var args = [];
-        for (var _i = 0; _i < (arguments.length - 3); _i++) {
-            args[_i] = arguments[_i + 3];
+        for (var _i = 3; _i < arguments.length; _i++) {
+            args[_i - 3] = arguments[_i];
         }
         _super.call(this, err, msg, args);
         this.validationErrorData = validationErrorData;

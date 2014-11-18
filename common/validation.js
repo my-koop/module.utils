@@ -1,10 +1,8 @@
 // http://validatejs.org/ for documentation
 var validateJs = require("validate.js");
-
 function validation(obj, constraint, options) {
     return validateJs(obj, constraint, options);
 }
-
 var validation;
 (function (validation) {
     function addValidator(validatorName, validationFunction) {
@@ -16,5 +14,4 @@ var validation;
     }
     validation.addValidator = addValidator;
 })(validation || (validation = {}));
-
 module.exports = validation;

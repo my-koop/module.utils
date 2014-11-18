@@ -1,2 +1,1 @@
-var getRouteName = require("./getRouteName");
-exports.getRouteName = getRouteName;
+exports.getRouteName = require("./getRouteName");

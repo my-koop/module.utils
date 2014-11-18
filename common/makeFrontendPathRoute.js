@@ -1,5 +1,4 @@
 var _ = require("lodash");
-
 function makeFrontendPathRoute(idPath) {
     return idPath.slice(0, idPath.length - 1).reduce(function (path, id) {
         path.push(id);

@@ -5,14 +5,13 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var verror = require("verror");
-
 var MyKoopError = (function (_super) {
     __extends(MyKoopError, _super);
     function MyKoopError(err, msg) {
-        if (typeof msg === "undefined") { msg = "My Koop Error"; }
+        if (msg === void 0) { msg = "My Koop Error"; }
         var args = [];
-        for (var _i = 0; _i < (arguments.length - 2); _i++) {
-            args[_i] = arguments[_i + 2];
+        for (var _i = 2; _i < arguments.length; _i++) {
+            args[_i - 2] = arguments[_i];
         }
         _super.call(this, err, msg, args);
         this.statusCode = 500;
@@ -24,5 +23,4 @@ var MyKoopError = (function (_super) {
     };
     return MyKoopError;
 })(verror.WError);
-
 module.exports = MyKoopError;

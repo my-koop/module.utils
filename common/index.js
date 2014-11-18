@@ -1,2 +1,1 @@
-var validation = require("./validation");
-exports.validation = validation;
+exports.validation = require("./validation");

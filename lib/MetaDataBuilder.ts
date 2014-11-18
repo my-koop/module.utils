@@ -24,7 +24,7 @@ class MetaDataBuilder implements utils.MetaDataBuilder {
     }
 
     var dst = this.metaData;
-    _.forEach(path, function(street) {
+    _.forEach(path, function(street: string) {
       if(!dst[street]) {
         dst[street] = {};
       }

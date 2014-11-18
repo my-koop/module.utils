@@ -5,15 +5,14 @@ var __extends = this.__extends || function (d, b) {
     d.prototype = new __();
 };
 var MyKoopError = require("./MyKoopError");
-
 var ApplicationError = (function (_super) {
     __extends(ApplicationError, _super);
     function ApplicationError(err, errData, msg) {
-        if (typeof errData === "undefined") { errData = {}; }
-        if (typeof msg === "undefined") { msg = "Application Error"; }
+        if (errData === void 0) { errData = {}; }
+        if (msg === void 0) { msg = "Application Error"; }
         var args = [];
-        for (var _i = 0; _i < (arguments.length - 3); _i++) {
-            args[_i] = arguments[_i + 3];
+        for (var _i = 3; _i < arguments.length; _i++) {
+            args[_i - 3] = arguments[_i];
         }
         _super.call(this, err, msg, args);
         this.errData = errData;
@@ -27,5 +26,4 @@ var ApplicationError = (function (_super) {
     };
     return ApplicationError;
 })(MyKoopError);
-
 module.exports = ApplicationError;

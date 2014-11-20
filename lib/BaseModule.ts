@@ -1,4 +1,5 @@
 import DatabaseError = require("../errors/DatabaseError");
+import _ = require("lodash");
 
 class BaseModule implements mykoop.IModule {
   moduleManager: mykoop.ModuleManager;
@@ -19,6 +20,7 @@ class BaseModule implements mykoop.IModule {
     if(typeof method === "string") {
       method = self["__" + method];
     }
+    method = _.bind(method, self);
     self.db.getConnection(function(err, connection, cleanup) {
       if(err) {
         return callback(new DatabaseError(err));

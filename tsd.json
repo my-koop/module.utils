@@ -13,6 +13,9 @@
     },
     "express/express.d.ts": {
       "commit": "19f97ddf7a0e81bffcf4e4482bb2a3ea6f2bf5b7"
+    },
+    "mysql/mysql.d.ts": {
+      "commit": "9c42eac834072f1bb3ed3c7e8551f8ec0770a937"
     }
   },
   "dependencies": {

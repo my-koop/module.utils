@@ -1,9 +1,7 @@
 
-import utils = require("mykoop-utils");
-var DatabaseError = utils.errors.DatabaseError;
+import DatabaseError = require("../errors/DatabaseError");
 import _ = require("lodash");
 
-// FIXME:: Move to mykoop-utils once concept proven
 class MySqlHelper {
   private mConnection: mysql.IConnection = null;
   private mCleanup: Function = _.noop;

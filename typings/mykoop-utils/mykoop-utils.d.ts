@@ -4,6 +4,10 @@ declare module mklogger {
   export interface Logger {}
 }
 
+declare module mysql {
+  export interface IConnection {}
+}
+
 declare module "mykoop-utils/common" {
   export function validation(obj: any, constraint, options?: any);
   module validation {
@@ -84,5 +88,14 @@ declare module "mykoop-utils" {
     addData(path: string, data: any): void;
     // Adds a frontend route to the MetaData, refer to RouteMetaData for options
     addFrontendRoute(options: RouteMetaData);
+  }
+
+  export class MySqlHelper {
+    constructor();
+    connection(): mysql.IConnection;
+    setConnection(cleanup: any, connection: any): void;
+    beginTransaction(callback: any): void;
+    commitTransaction(callback: any): void;
+    cleanup(err?: any, callback?: any): void;
   }
 }

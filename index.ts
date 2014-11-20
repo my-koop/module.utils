@@ -14,6 +14,7 @@ var logger = getLogger(module);
 export import MetaDataBuilder = require("./lib/MetaDataBuilder");
 export import ModuleControllersBinder = require("./lib/ModuleControllersBinder");
 export import BaseModule = require("./lib/BaseModule");
+export import MySqlHelper = require("./lib/MySqlHelper");
 export import common = require("./common/index");
 export import errors = require("./errors/index");
 import frontend = require("./frontend/index");

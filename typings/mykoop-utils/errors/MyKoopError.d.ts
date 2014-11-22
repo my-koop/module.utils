@@ -11,5 +11,5 @@ declare class MyKoopError extends VErrorTypes.VError {
     public static ValidationError: typeof ValidationError;
     public statusCode: number;
     constructor(err: Error, msg?: string, ...args: any[]);
-    public serialize(): ErrorInterfaces.SerializeResult;
+    serialize(): ErrorInterfaces.SerializeResult;
 }

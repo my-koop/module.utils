@@ -1,10 +1,6 @@
-declare class ValidationError extends MyKoopError {
-    public validationErrorData: ErrorInterfaces.ValidationErrorData;
-    constructor(
-      err: Error,
-      validationErrorData: ErrorInterfaces.ValidationErrorData,
-      msg?: string,
-      ...args: any[]
-    );
-    public serialize(): ErrorInterfaces.SerializeResult;
+/// <reference path="./ErrorInterfaces.d.ts" />
+/// <reference path="./ApplicationError.d.ts" />
+declare class ValidationError extends ApplicationError {
+    validationErrorData: any;
+    constructor(err: Error, validationErrorData: any, msg?: string, ...args: any[]);
 }

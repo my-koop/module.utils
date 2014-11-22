@@ -4,7 +4,7 @@ var __extends = this.__extends || function (d, b) {
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-var MyKoopError = require("./MyKoopError");
+var ApplicationError = require("./ApplicationError");
 var ValidationError = (function (_super) {
     __extends(ValidationError, _super);
     function ValidationError(err, validationErrorData, msg) {
@@ -13,16 +13,16 @@ var ValidationError = (function (_super) {
         for (var _i = 3; _i < arguments.length; _i++) {
             args[_i - 3] = arguments[_i];
         }
-        _super.call(this, err, msg, args);
+        _super.call(this, err, validationErrorData, msg, args);
         this.validationErrorData = validationErrorData;
         this.statusCode = 400;
     }
     ValidationError.prototype.serialize = function () {
-        return {
-            context: "validation",
-            validation: this.validationErrorData
-        };
+        var serialize = _super.prototype.serialize.call(this);
+        // FIXME:: This is to support backward compatibility
+        serialize.validation = this.validationErrorData;
+        return serialize;
     };
     return ValidationError;
-})(MyKoopError);
+})(ApplicationError);
 module.exports = ValidationError;

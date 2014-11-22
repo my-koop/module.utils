@@ -14,4 +14,8 @@ var logger = require("mykoop-logger")(module);
   return ValidationError;
 });
 
+import ResourceNotFoundError = require("./ResourceNotFoundError");
+ApplicationError.ResourceNotFoundError = ResourceNotFoundError;
+ApplicationError.ValidationError = ValidationError;
+
 export = MyKoopError;

@@ -11,6 +11,13 @@ class AccessDeniedError extends ApplicationError {
     super(err, data, msg, args);
     this.statusCode = 403;
   }
+
+  serialize(): ErrorInterfaces.SerializeResult {
+    var serialize = super.serialize();
+    serialize.context = "denied";
+
+    return serialize;
+  }
 }
 
 export = AccessDeniedError;

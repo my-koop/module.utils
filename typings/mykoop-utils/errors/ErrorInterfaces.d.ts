@@ -1,4 +1,3 @@
-/// <reference path="./ErrorCodes.d.ts" />
 
 declare module ErrorInterfaces {
   export interface ValidationErrorData {

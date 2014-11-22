@@ -4,7 +4,7 @@ import ErrorInterfaces = require("./ErrorInterfaces");
 class ValidationError extends ApplicationError {
   constructor(
     err: Error,
-    public validationErrorData: ErrorInterfaces.ValidationErrorData,
+    public validationErrorData: any,
     msg: string = "Validation Error",
     ...args: any[]
   ) {

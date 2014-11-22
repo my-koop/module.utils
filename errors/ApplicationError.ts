@@ -4,7 +4,7 @@ import ErrorInterfaces = require("./ErrorInterfaces");
 class ApplicationError extends MyKoopError {
   // Child classes
   static ValidationError: any;
-  static RessourceNotFoundError: any;
+  static ResourceNotFoundError: any;
 
   constructor(
     err: Error,

@@ -5,6 +5,7 @@ class ApplicationError extends MyKoopError {
   // Child classes
   static ValidationError: any;
   static ResourceNotFoundError: any;
+  static AccessDeniedError: any;
 
   constructor(
     err: Error,

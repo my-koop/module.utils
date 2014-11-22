@@ -15,7 +15,9 @@ var logger = require("mykoop-logger")(module);
 });
 
 import ResourceNotFoundError = require("./ResourceNotFoundError");
+import AccessDeniedError = require("./AccessDeniedError");
 ApplicationError.ResourceNotFoundError = ResourceNotFoundError;
+ApplicationError.AccessDeniedError = AccessDeniedError;
 ApplicationError.ValidationError = ValidationError;
 
 export = MyKoopError;

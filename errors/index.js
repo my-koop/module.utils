@@ -13,6 +13,8 @@ MyKoopError.__defineGetter__("ValidationError", function () {
     return ValidationError;
 });
 var ResourceNotFoundError = require("./ResourceNotFoundError");
+var AccessDeniedError = require("./AccessDeniedError");
 ApplicationError.ResourceNotFoundError = ResourceNotFoundError;
+ApplicationError.AccessDeniedError = AccessDeniedError;
 ApplicationError.ValidationError = ValidationError;
 module.exports = MyKoopError;

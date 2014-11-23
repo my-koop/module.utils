@@ -7,8 +7,6 @@
 declare class MyKoopError extends VErrorTypes.VError {
     public static DatabaseError: typeof DatabaseError;
     public static ApplicationError: typeof ApplicationError;
-    //FIXME:: Deprecated
-    public static ValidationError: typeof ValidationError;
     public statusCode: number;
     constructor(err: Error, msg?: string, ...args: any[]);
     serialize(): ErrorInterfaces.SerializeResult;

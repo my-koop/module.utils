@@ -4,7 +4,6 @@ import ErrorInterfaces = require("./ErrorInterfaces");
 class MyKoopError extends verror.WError {
   static DatabaseError: any;
   static ApplicationError: any;
-  static ValidationError: any;
   statusCode: number;
 
   constructor(

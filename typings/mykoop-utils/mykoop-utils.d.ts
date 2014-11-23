@@ -33,14 +33,15 @@ declare module "mykoop-utils" {
       params: any,
       callback: (err, result?) => void
     );
-    callWithConnection(
-      method: (connection, params, callback) => void,
-      params: any,
-      callback: (err, result?) => void
+    callWithConnection<P,C>(
+      method: (connection, params: P, callback: C) => void,
+      params: P,
+      callback: C
     );
   }
 
   export class ModuleControllersBinder<T extends mykoop.IModule> {
+    public moduleInstance: T;
     constructor(moduleInstance: T);
     attach(
       params: mykoop.RouteParams,
@@ -50,12 +51,24 @@ declare module "mykoop-utils" {
       params: mykoop.RouteParams,
       controller: Express.Handler[]
     );
+
+    makeSimpleController<P>(
+      method: (params: P, callback: (err?, res?) => void) => void,
+      parseFunc?: (req: Express.Request) => P
+    ): (req: Express.Request, res: Express.Response) => void;
+    makeSimpleController<P,R>(
+      method: (params: P, callback: (err?, res?: R) => void) => void,
+      options?: {
+        parseFunc?: (req: Express.Request) => P
+        processResponse?: (response: R) => any;
+      }
+    ): (req: Express.Request, res: Express.Response) => void;
     makeSimpleController(
-      method: string,
+      methodName: string,
       parseFunc?: (req: Express.Request) => any
     ): (req: Express.Request, res: Express.Response) => void;
     makeSimpleController(
-      method: string,
+      methodName: string,
       options?: {
         parseFunc?: (req: Express.Request) => any
         processResponse?: (response: any) => any;

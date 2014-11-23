@@ -1,8 +1,11 @@
 import _ = require("lodash");
 import Express = require("express");
+import getLogger = require("mykoop-logger");
+import MyKoopError = require("../errors/MyKoopError");
+var logger = getLogger(module);
 
 class ModuleControllersBinder<T extends mykoop.IModule> {
-  private moduleInstance: T;
+  moduleInstance: T;
   private routerModule: mykoop.Router;
 
   constructor(moduleInstance: T) {
@@ -26,12 +29,25 @@ class ModuleControllersBinder<T extends mykoop.IModule> {
   }
 
   makeSimpleController(
-    method: string,
+    methodName: string,
     options?: {
       parseFunc?: (req: Express.Request) => any;
       processResponse?: (response: any) => any;
     }
   ) {
+    var method;
+    if(_.isFunction(methodName)) {
+      method = _.bind(<any>methodName, this.moduleInstance);
+    } else {
+      if(!_.isFunction(this.moduleInstance[methodName])) {
+        logger.warn("Method [%s] doesn't exist");
+        return function(req, res) {
+          res.error(new MyKoopError(null, "Invalid controller handler"));
+        }
+      }
+      method = _.bind(this.moduleInstance[methodName], this.moduleInstance);
+    }
+
     if(_.isFunction(options)) {
       options = {
         parseFunc: <any>options
@@ -45,7 +61,7 @@ class ModuleControllersBinder<T extends mykoop.IModule> {
 
     return function(req, res) {
       var params = parseFunc(req);
-      this[method](params, function(err, response) {
+      method(params, function(err, response) {
         if(err) {
           return res.error(err);
         }

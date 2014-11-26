@@ -13,10 +13,10 @@ class AccessDeniedError extends ApplicationError {
   }
 
   serialize(): ErrorInterfaces.SerializeResult {
-    var serialize = super.serialize();
-    serialize.context = "denied";
-
-    return serialize;
+    return {
+      context: "denied",
+      denied: this.errData
+    };
   }
 }
 

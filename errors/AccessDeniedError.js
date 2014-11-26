@@ -17,9 +17,10 @@ var AccessDeniedError = (function (_super) {
         this.statusCode = 403;
     }
     AccessDeniedError.prototype.serialize = function () {
-        var serialize = _super.prototype.serialize.call(this);
-        serialize.context = "denied";
-        return serialize;
+        return {
+            context: "denied",
+            denied: this.errData
+        };
     };
     return AccessDeniedError;
 })(ApplicationError);

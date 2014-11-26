@@ -51,6 +51,10 @@ class MetaDataBuilder implements utils.MetaDataBuilder {
       data.handler = this.generateHandler(options.component);
     }
 
+    if(options.permissions) {
+      data.permissions = options.permissions;
+    }
+
     this.addData(path, data);
 
     if(options.default) {

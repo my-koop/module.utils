@@ -89,6 +89,9 @@ declare module "mykoop-utils" {
     // Wrapper component default is set
     // Wrapper components have {this.props.activeRouteHandler()}
     component?: string;
+    // Permissions the user needs to meet for this route
+    // to be displayed.
+    permissions?: string;
     // same as component but used when this route has wrapper component
     default?: string;
   }

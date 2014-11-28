@@ -14,11 +14,12 @@ var MyKoopError = (function (_super) {
             args[_i - 2] = arguments[_i];
         }
         _super.call(this, err, msg, args);
+        this.context = "unknown";
         this.statusCode = 500;
     }
     MyKoopError.prototype.serialize = function () {
         return {
-            context: "unknown"
+            context: this.context
         };
     };
     return MyKoopError;

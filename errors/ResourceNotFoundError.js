@@ -15,6 +15,7 @@ var ResourceNotFoundError = (function (_super) {
         }
         _super.call(this, err, data, msg, args);
         this.statusCode = 404;
+        this.context = "notFound";
     }
     return ResourceNotFoundError;
 })(ApplicationError);

@@ -14,12 +14,8 @@ var DatabaseError = (function (_super) {
             args[_i - 2] = arguments[_i];
         }
         _super.call(this, err, msg, args);
+        this.context = "database";
     }
-    DatabaseError.prototype.serialize = function () {
-        return {
-            context: "database"
-        };
-    };
     return DatabaseError;
 })(MyKoopError);
 module.exports = DatabaseError;

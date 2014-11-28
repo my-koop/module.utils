@@ -10,6 +10,7 @@ class ValidationError extends ApplicationError {
   ) {
     super(err, validationErrorData, msg, args);
     this.statusCode = 400;
+    this.context = "validation";
   }
 
   serialize(): ErrorInterfaces.SerializeResult {

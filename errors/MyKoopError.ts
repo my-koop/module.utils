@@ -5,6 +5,7 @@ class MyKoopError extends verror.WError {
   static DatabaseError: any;
   static ApplicationError: any;
   statusCode: number;
+  context = "unknown";
 
   constructor(
     err: Error,
@@ -17,7 +18,7 @@ class MyKoopError extends verror.WError {
 
   serialize(): ErrorInterfaces.SerializeResult {
     return {
-      context: "unknown"
+      context: this.context
     };
   }
 }

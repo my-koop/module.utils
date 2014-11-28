@@ -10,6 +10,7 @@ class ResourceNotFoundError extends ApplicationError {
   ) {
     super(err, data, msg, args);
     this.statusCode = 404;
+    this.context = "notFound";
   }
 }
 export = ResourceNotFoundError;

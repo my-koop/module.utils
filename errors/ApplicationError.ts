@@ -15,11 +15,12 @@ class ApplicationError extends MyKoopError {
   ) {
     super(err, msg, args);
     this.statusCode = 400;
+    this.context = "application";
   }
 
   serialize(): ErrorInterfaces.SerializeResult {
     return {
-      context: "application",
+      context: this.context,
       app: this.errData
     };
   }

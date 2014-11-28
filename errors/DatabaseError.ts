@@ -8,12 +8,7 @@ class DatabaseError extends MyKoopError {
     ...args: any[]
   ) {
     super(err, msg, args);
-  }
-
-  serialize(): ErrorInterfaces.SerializeResult {
-    return {
-      context: "database"
-    };
+    this.context = "database";
   }
 }
 export = DatabaseError;

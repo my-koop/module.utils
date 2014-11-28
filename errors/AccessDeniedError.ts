@@ -10,11 +10,12 @@ class AccessDeniedError extends ApplicationError {
   ) {
     super(err, data, msg, args);
     this.statusCode = 403;
+    this.context = "denied";
   }
 
   serialize(): ErrorInterfaces.SerializeResult {
     return {
-      context: "denied",
+      context: this.context,
       denied: this.errData
     };
   }

@@ -91,7 +91,7 @@ declare module "mykoop-utils" {
     component?: string;
     // Permissions the user needs to meet for this route
     // to be displayed.
-    permissions?: string;
+    permissions?: any;
     // same as component but used when this route has wrapper component
     default?: string;
   }

@@ -1,6 +1,16 @@
 // http://validatejs.org/ for documentation
 var validateJs = require("validate.js");
 
+validateJs.validators.datetime.parse = function(value) {
+  if(value) {
+    return new Date(value).getTime();
+  }
+  return NaN;
+}
+
+validateJs.validators.datetime.format = function(value) {
+  return new Date(value).toString();
+}
 
 function validation(obj: any, constraint, options?: any ) {
   return validateJs(obj, constraint, options)

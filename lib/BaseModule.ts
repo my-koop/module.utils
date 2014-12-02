@@ -21,6 +21,9 @@ class BaseModule implements mykoop.IModule {
       method = self["__" + method];
     }
     method = _.bind(method, self);
+    if(!self.db) {
+      return callback(new DatabaseError(null, "Database Unavailable"));
+    }
     self.db.getConnection(function(err, connection, cleanup) {
       if(err) {
         return callback(new DatabaseError(err));

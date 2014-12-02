@@ -18,6 +18,10 @@ validateJs.validators.datetime.format = function(value) {
 
 validateJs.validators.presence = function(value, options) {
   var message = options.message || "can't be blank";
+  if(_.isUndefined(value) || _.isNull(value)) {
+    return message;
+  }
+
   if(_.isFunction(value)) {
     return;
   }
@@ -33,7 +37,7 @@ validateJs.validators.presence = function(value, options) {
     return;
   }
 
-  if(_.isEmpty(value)) {
+  if(_.isObject(value) && _.isEmpty(value)) {
     return message;
   }
 }

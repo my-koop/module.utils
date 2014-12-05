@@ -52,16 +52,28 @@ declare module "mykoop-utils" {
       controller: Express.Handler[]
     );
 
-    makeSimpleController<P>(
-      method: (params: P, callback: (err?, res?) => void) => void,
-      parseFunc?: (req: Express.Request) => P
-    ): (req: Express.Request, res: Express.Response) => void;
     makeSimpleController<P,R>(
       method: (params: P, callback: (err?, res?: R) => void) => void,
-      options?: {
+      options: {
         parseFunc?: (req: Express.Request) => P
         processResponse?: (response: R) => any;
       }
+    ): (req: Express.Request, res: Express.Response) => void;
+    makeSimpleController<R>(
+      method: (params: any, callback: (err?, res?: R) => void) => void,
+      options: {
+        processResponse?: (response: R) => any;
+      }
+    ): (req: Express.Request, res: Express.Response) => void;
+    makeSimpleController<P>(
+      method: (params: P, callback: (err?, res?) => void) => void,
+      options: {
+        parseFunc?: (req: Express.Request) => P
+      }
+    ): (req: Express.Request, res: Express.Response) => void;
+    makeSimpleController<P>(
+      method: (params: P, callback: (err?, res?) => void) => void,
+      parseFunc?: (req: Express.Request) => P
     ): (req: Express.Request, res: Express.Response) => void;
     makeSimpleController(
       methodName: string,
